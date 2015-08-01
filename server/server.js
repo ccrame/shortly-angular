@@ -18,7 +18,7 @@ module.exports = app;
   Next, we then inject our server and express into our config/middlware.js file for setup
     we also exported our server for easy testing, it is then started in index.js
 
-  middleware.js requires all epxpress middlware and sets it up
+  middleware.js requires all express middlware and sets it up
   our authentication is set up there as well
   we also create individual routers for are two main features, links and users
   each feature has it's own folder with a model, controller, and route file
