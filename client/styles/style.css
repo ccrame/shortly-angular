@@ -1,4 +1,4 @@
-body {
+  body {
   margin: 0;
   margin-top: 10px;
   font-family: arial, sans-serif;
@@ -31,7 +31,11 @@ h1 {
   float: left;
 }
 
-.navigation li a {
+.navigation .logout {
+  float: right;
+}
+
+.navigation li a, .logout {
   width: 100px;
   height: 20px;
   line-height: 20px;
@@ -40,7 +44,7 @@ h1 {
   text-align: center;
 }
 
-.navigation li a:hover {
+.navigation li a:hover ,.logout:hover{
   background-color: #ddd;
 }
 
