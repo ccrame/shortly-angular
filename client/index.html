@@ -5,8 +5,16 @@
     <title>Shortly</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
-  <body>
+  <body ng-controller="MainController">
     <h1>Shortly</h1>
+
+    <div ng-show="showNavigation()" class='navigation'>
+      <ul>
+        <li><a href='#/links' class='index' ng-class="{selected: currentPath()==='/links'}">All Links</a></li>
+        <li><a href='#/shorten' class='create' ng-class="{selected: currentPath()==='/shorten'}">Shorten</a></li>
+      </ul>
+      <a ng-click="logout()" class='logout'>Logout</a>
+    </div>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view></div>
