@@ -33,7 +33,7 @@ describe('ShortenController', function () {
   });
 
   it('should have a link property on the $scope', function() {
-    expect($scope.link).to.be.an('object');
+    expect($scope.url).to.be.an('object');
   });
 
   it('should have a addLink method on the $scope', function () {
@@ -41,7 +41,8 @@ describe('ShortenController', function () {
   });
 
   it('should be able to create new links with addLink()', function () {
-    $httpBackend.expectPOST("/api/links").respond(201, '');
+    $scope.url.text = 'http://www.test.com';
+    $httpBackend.expectPOST("/api/links/").respond(201, '');
     $scope.addLink();
     $httpBackend.flush();
   });
