@@ -1,37 +1,8 @@
 <div id='container'>
-  <div class='navigation'>
-    <ul>
-      <li><a href='#/links' class='index'>All Links</a></li>
-      <li><a href='#/shorten' class='create'>Shorten</a></li>
-    </ul>
-    <!--a href='/logout' class='logout'>Logout</a-->
-  </div>
-
-  <form ng-submit="createLink();">
-    <input class='text' type='text' name='url' ng-model="url">
-    <button>Shorten</button>
+  <form ng-submit="addLink();">
+    <input class='text' type='text' name='url' ng-model="url.text">
+    <button ng-disabled="!validUrl()">Shorten</button>
   </form>
   <img ng-if="sending" class='spinner' src='/assets/spiffygif_46x46.gif'>
-  <div ng-if="!validUrl()" class='message' ng-model="error">Invalid Url</div>
+  <div ng-if="!validUrl() && url.text" class='message' ng-model="error">Invalid Url</div>
 </div>
-
-
-
-<!--
-<div class='navigation'>
-  <ul>
-    <li><a href='#' class='index'>All Links</a></li>
-    <li><a href='#' class='create'>Shorten</a></li>
-  </ul>
-  <a href='/logout' class='logout'>Logout</a>
-</div>
-
-
-<form>
-    <input class='text' type='text' name='url'>
-    <input type='submit' value='Shorten'>
-</form>
-<img class='spinner' src='/spiffygif_46x46.gif'>
-<div class='message'></div>
-
--->
